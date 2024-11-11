@@ -92,14 +92,81 @@
             <input type="text" id="meta" required />
           </div>
           <div class="input-button">
-            <button class="btn-editar"><a href="">Editar Perfil</a></button>
-            <button class="btn-salvar">
-              <a href="">Salvar Informações</a>
-            </button>
+            <button class="btn-editar">Editar Perfil</button>
+            <button class="btn-salvar">Salvar Informações</button>
             <button class="btn-painel"><a href="/Octofy/Painel dashboard admin/dashboard.html">painel</a></button>
           </div>
         </div>
       </div>
     </main>
+
+    <script>
+      // Seleciona elementos de input
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const enderecoInput = document.getElementById('endereco');
+      const dateInput = document.getElementById('date');
+      const metaInput = document.getElementById('meta');
+      const fileInput = document.getElementById('arquivo');
+      const profileImage = document.querySelector('.input-image img');
+    
+      // Carrega dados do localStorage ao abrir a página
+      document.addEventListener('DOMContentLoaded', () => {
+        const profileData = JSON.parse(localStorage.getItem('profileData'));
+        if (profileData) {
+          nameInput.value = profileData.name;
+          emailInput.value = profileData.email;
+          enderecoInput.value = profileData.endereco;
+          dateInput.value = profileData.date;
+          metaInput.value = profileData.meta;
+          if (profileData.image) {
+            profileImage.src = profileData.image;
+          }
+        }
+      });
+    
+      // Atualiza a imagem ao selecionar um arquivo
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            profileImage.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    
+      // Salva as informações no localStorage
+      function saveProfile() {
+        const profileData = {
+          name: nameInput.value,
+          email: emailInput.value,
+          endereco: enderecoInput.value,
+          date: dateInput.value,
+          meta: metaInput.value,
+          image: profileImage.src,
+        };
+        localStorage.setItem('profileData', JSON.stringify(profileData));
+        alert('Informações salvas com sucesso!');
+      }
+    
+      // Configurações dos botões para editar e salvar
+      document.querySelector('.btn-editar').addEventListener('click', (e) => {
+        e.preventDefault();
+        nameInput.disabled = !nameInput.disabled;
+        emailInput.disabled = !emailInput.disabled;
+        enderecoInput.disabled = !enderecoInput.disabled;
+        dateInput.disabled = !dateInput.disabled;
+        metaInput.disabled = !metaInput.disabled;
+        alert('Campos prontos para edição');
+      });
+    
+      document.querySelector('.btn-salvar').addEventListener('click', (e) => {
+        e.preventDefault();
+        saveProfile();
+      });
+    </script>
+    
   </body>
 </html>
