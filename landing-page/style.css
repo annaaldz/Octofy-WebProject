@@ -82,6 +82,12 @@ img {
 .vantagens .vant{
     display: flex;
     padding-top: 20px;
+
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h2 {
