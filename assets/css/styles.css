@@ -53,6 +53,12 @@ p {
     border-color: #5623AF;
 }
 
+.video{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 
 
 button .settle{
