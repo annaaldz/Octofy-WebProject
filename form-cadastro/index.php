@@ -1,29 +1,49 @@
 <?php
   
-  if(isset($_POST['submit']))
-  {
-  //   print_r($_POST['name']);
-  //   print_r($_POST['email']);
-  //   print_r($_POST['password']);
+require 'config.php';
+require 'vendor/autoload.php';
 
-  include_once('config.php');
-  
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+$msg = '';
 
-  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha) 
-  VALUES ('$name','$email','$password')");
+// quando o form for submetido, pega 'email' e 'password'
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+  $email = (isset($_POST['email']) ? $_POST['email'] :null);
+  $password = (isset($_POST['password']) ? $_POST['password'] :null);
+
+  $client = new GuzzleHttp\Client();
+
+  $body = [
+    'email' => $email,
+    'password' => $password
+  ];
+  try{
+    $response = $client->post(
+      baseUri('signup'),
+        [
+          'headers' => getHeader(),
+          'body' => json_encode($body)
+        ]
+    );
+    $data = json_decode($response->getBody());
+    if(isset($data->id)){
+        $msg = 'Usuário ' . $data->email . 'criado com sucesso';      
+    }
+    else{
+        $msg = 'Erro ao criar usuário';
+    }
   }
-
-  // if($conexao->connect_errno)
-  // {
-  //   echo "Erro";
-  // }
-  // else
-  // {
-  //   echo "conexao efetuada com sucesso";
-  // }
+  catch(GuzzleHttp\Exception\RequestException $e){
+    if($e->hasResponse()){
+      if($e->getResponse()->getStatusCode() == '400'){
+        $msg = 'Email já cadastrado';
+      }
+      if($e->getResponse()->getStatusCode() == '422'){
+        $res = json_decode($e->getResponse()->getBody());
+        $msg =$res->msg;
+      }
+    }
+  }
+}
 ?>
 
 
@@ -33,7 +53,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     
     <title>Cadastro</title>
@@ -42,7 +62,7 @@
       <div class="form-image">
         <!-- <div class="form-group"> -->
           <div class="back-image">
-            <a href="/Octofy/Octofy/Lading page/landing.html"><img src="img/icons8-voltar-50.png" alt=""></a>
+            <a href="/Octofy/Octofy/Lading page/landing.html"><img src="assets\img\icons8-voltar-50.png" alt=""></a>
             
           </div>
           <div class="semi-title">
@@ -52,7 +72,7 @@
             </h1>
           </div>
           <div class="form-gif">
-            <img src="img/bouncy-security-with-fingerprint-verification.gif" />
+            <img src="assets/img/bouncy-security-with-fingerprint-verification.gif" />
           </div>
         <!-- </div> -->
         </div>
@@ -62,20 +82,11 @@
           <div class="form-header">
             <div class="title">
               <h1>Cadastro</h1>
+              <p><?php echo $msg ?></p>
             </div>
             
 
-          <div class="imput-group">
-            <div class="input-box">
-              <label for="name"></label>
-              <input
-                type="name"
-                name="name"
-                id="name"
-                placeholder="Nome"
-                required
-              />
-            </div>
+          
             <div class="input-box">
               <label for="email"></label>
               <input
@@ -97,17 +108,7 @@
               />
               
             </div>
-            <div class="input-box">
-              <label for="confirmPassword"></label>
-              <input
-                type="confirmPassword"
-                name="confirmPassword"
-                id="confirmPassword"
-                placeholder="Confirmar senha"
-                required
-              />
-              
-            </div>
+            
           </div>
           <div class="login">
             <div class="login-info">
