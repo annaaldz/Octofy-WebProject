@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     
     <title>Cadastro</title>
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>
         
       <div class="form">
-        <form action="index.php" method="POST">
+        <form action="register.php" method="POST">
           <div class="form-header">
             <div class="title">
               <h1>Cadastro</h1>
@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
               <h5>Já tenho uma conta <a href="http://localhost/Octofy/Octofy/login/index.php">Login</a></h5>
             </div>
             <div class="login-button">
-              <a href="/Octofy/Octofy/Metas/metas.html"><button type="submit" name="submit" id="submit" class="btn_cad">Cadastre-se</button></a>
+              <a href="metas.html"><button type="submit" name="submit" id="submit" class="btn_cad">Cadastre-se</button></a>
             </div>
           </div>
             <div class="use-term">

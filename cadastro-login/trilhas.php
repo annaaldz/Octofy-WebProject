@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+echo "<h2>Página Restrita</h2>";
+echo "Usuario Logado: " . $_SESSION['email'];
+echo "Token: " . $_SESSION['token'];
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -5,10 +14,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-        <link rel="shortcut icon" href="/assets/img/polvo-octofy-icon.png" type="image/x-icon">
-        <link rel="stylesheet" href="assents/css/style.css">
+        <link rel="shortcut icon" href="assets\img\polvo-octofy 1.png" type="image/x-icon">
         <link rel="stylesheet" href="assets/css/area-interesse.css">
-        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets\css\header.css">
          <title>Trilhas de Conhecimento | Octofy</title> 
     </head>
     <body>
@@ -16,7 +24,7 @@
       <header>
         <nav class="nav-bar">
             <div class="Logo">
-                <img id="Logo-web" src="\assets\img\img_header\Logo Octofy.png" alt="">
+                <img id="Logo-web" src="assets/img//Logo Octofy.png" alt="">
             </div>
 
             <div class="nav-list">
