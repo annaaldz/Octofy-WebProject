@@ -7,6 +7,27 @@
     <link rel="shortcut icon" href="/assets/img/polvo-octofy-icon.png" type="image/x-icon">
     <title>Quiz | Octofy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        .custom-purple {
+            background-color: #a775ff;
+        }
+        .custom-purple-dark {
+            background-color: #6935d9;
+        }
+        .custom-button {
+            background-color: white;
+            color: #6935d9;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .custom-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -55,8 +76,42 @@
         </div>
     </header>
 
-    <main>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNXfwmGOk0ybVotNzIL2rwY_uak5cZOFV9ET28q3_PyBtXuw/viewform?embedded=true" width="640" height="469" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-center mb-16">Chegou seu momento!</h1>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- Card 1 -->
+            <div class="custom-purple-dark rounded-3xl overflow-hidden p-8 text-white flex flex-col justify-between min-h-[400px]">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Descubra seu Perfil de Consumidor</h2>
+                    <p class="text-lg mb-8">
+                        Faça nosso teste e descubra qual é o seu perfil de consumidor e as melhores estratégias para você.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <a href="https://tally.so/r/3qYDo2" class="custom-button">
+                        Começar
+                    </a>
+                    <img src="/api/placeholder/200/200" alt="Ilustração Investidor" class="w-48">
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="custom-purple rounded-3xl overflow-hidden p-8 text-white flex flex-col justify-between min-h-[400px]">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Teste de Perfil de Investidor</h2>
+                    <p class="text-lg mb-8">
+                        Faça nosso teste e descubra qual é o seu perfil de investimentos e as melhores estratégias para você.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <a href="https://tally.so/r/w5lZLb" class="custom-button">
+                        Começar
+                    </a>
+                    <img src="/api/placeholder/200/200" alt="Ilustração Profissional" class="w-48">
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
