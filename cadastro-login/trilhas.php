@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-echo "<h2>Página Restrita</h2>";
-echo "Usuario Logado: " . $_SESSION['email'];
-echo "Token: " . $_SESSION['token'];
+// echo "<h2>Página Restrita</h2>";
+// echo "Usuario Logado: " . $_SESSION['email'];
+// echo "Token: " . $_SESSION['token'];
 
 ?>
 
@@ -57,8 +57,8 @@ echo "Token: " . $_SESSION['token'];
               </ul>
 
             <div class="login">
-                <a href="http://localhost/Octofy/Octofy/login/index.php" class="nav-link">Login</a>
-                <button><a href="http://localhost/Octofy/Octofy/form-cadastro/index.php">Cadastre-se</a></button>
+                <a href="http://localhost/Octofy+/cadastro-login/login.php" class="nav-link">Login</a>
+                <button><a href="http://localhost/Octofy+/cadastro-login/register.php">Cadastre-se</a></button>
             </div>
 
         </div>
