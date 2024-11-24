@@ -1,54 +1,66 @@
 <?php
   
-session_start();
-require 'config.php';
-require 'vendor/autoload.php';
-
-$msg = '';
-
-// quando o form for submetido, pega 'email' e 'password'
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $email = (isset($_POST['email']) ? $_POST['email'] :null);
-  $password = (isset($_POST['password']) ? $_POST['password'] :null);
-
-  $client = new GuzzleHttp\Client();
-
-  $body = [
-    'email' => $email,
-    'password' => $password
-  ];
-  try{
-    $response = $client->post(
-      baseUri('token?grant_type=password'),
-        [
-          'headers' => getHeader(),
-          'body' => json_encode($body)
-        ]
-    );
-    $data = json_decode($response->getBody());
-    
-    if(isset($data->access_token)){
-        $_SESSION['token'] = $data->access_token;
-        $_SESSION['email'] = $data->user->email;
-
-        header("Location: trilhas.php");
-    }
-    else{
-        $msg = 'Erro ao autenticar usuário';
-    }
-  }
-  catch(GuzzleHttp\Exception\RequestException $e){
-    if($e->hasResponse()){
-      if($e->getResponse()->getStatusCode() == '400'){
-        $msg = 'Email e/ou senha incorretos';
+  session_start();
+  require 'config.php';
+  require 'vendor/autoload.php';
+  
+  $msg = '';
+  
+  // Verifica se o formulário foi submetido usando o método POST
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $email = isset($_POST['email']) ? $_POST['email'] : null;
+      $password = isset($_POST['password']) ? $_POST['password'] : null;
+  
+      $client = new GuzzleHttp\Client();
+      $body = [
+          'email' => $email,
+          'password' => $password
+      ];
+  
+      try {
+          $response = $client->post(
+              baseUri('token?grant_type=password'),
+              [
+                  'headers' => getHeader(),
+                  'body' => json_encode($body)
+              ]
+          );
+  
+          // Decodifique a resposta da API
+          $data = json_decode($response->getBody());
+  
+          // Exiba o conteúdo de $data para verificar a resposta
+          var_dump($data);
+  
+          // Verifique se o token foi retornado corretamente
+          if (isset($data->access_token)) {
+              $_SESSION['token'] = $data->access_token;
+              $_SESSION['email'] = $data->user->email;
+              header("Location: trilhas.php");
+              exit();
+          } else {
+              $msg = 'Erro ao autenticar usuário';
+          }
+      } catch (GuzzleHttp\Exception\RequestException $e) {
+          if ($e->hasResponse()) {
+              $statusCode = $e->getResponse()->getStatusCode();
+  
+              // Exibe status e corpo da resposta para identificar o erro
+              var_dump($statusCode, $e->getResponse()->getBody()->getContents());
+  
+              if ($statusCode == '400') {
+                  $msg = 'Email e/ou senha incorretos';
+              } elseif ($statusCode == '422') {
+                  $res = json_decode($e->getResponse()->getBody());
+                  $msg = $res->msg ?? 'Erro desconhecido';
+              } else {
+                  $msg = 'Erro inesperado ao se comunicar com o servidor';
+              }
+          } else {
+              $msg = 'Erro de conexão com a API';
+          }
       }
-      if($e->getResponse()->getStatusCode() == '422'){
-        $res = json_decode($e->getResponse()->getBody());
-        $msg =$res->msg;
-      }
-    }
   }
-}
 ?>
 
 
@@ -118,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
           <div class="login">
             
             <div class="login-button">
-              <a href="metas.html"><button type="submit" name="submit" id="submit" class="btn_cad">Login</button></a>
+              <button type="submit" name="submit" id="submit" class="btn_cad">Login</button>  
             </div>
           </div>
             

@@ -1,8 +1,6 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 header {
@@ -12,6 +10,7 @@ header {
     margin-top: 10px;
     gap: 90vh;
     box-shadow: 1px 4px 4px 1px rgba(122, 122, 122, 0.25);
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo {
