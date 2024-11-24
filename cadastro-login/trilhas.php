@@ -85,7 +85,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                 <a href="/cursos/invest.html"> <button class="aboutMe">Acessar</button> </a>
+                 <a href="http://localhost\Octofy+\cursos\invest.html"> <button class="aboutMe">Acessar</button> </a>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                <a href="/cursos/carreira.html"> <button class="aboutMe">Acessar</button></a>
+                <a href="http://localhost\Octofy+/cursos/carreira.html"> <button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                 <a href="/cursos/pre.html"> <button class="aboutMe">Acessar</button></a>
+                 <a href="http://localhost\Octofy+/cursos/pre.html"> <button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                  <a href="/cursos/riscos-retornos.html"><button class="aboutMe">Acessar</button></a>
+                  <a href="http://localhost\Octofy+/cursos/riscos-retornos.html"><button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                  <a href="/cursos/planejamento.html"><button class="aboutMe">Acessar</button></a>
+                  <a href="http://localhost\Octofy+/cursos/planejamento.html"><button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                  <a href="/cursos/objetivo.html"><button class="aboutMe">Acessar</button></a>
+                  <a href="http://localhost\Octofy+/cursos/objetivo.html"><button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                 <a href="/cursos/tipo-investimentos.html"> <button class="aboutMe">Acessar</button></a>
+                 <a href="http://localhost\Octofy+/cursos/tipo-investimentos.html"> <button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                  <a href="/cursos/organizacao.html"><button class="aboutMe">Acessar</button></a>
+                  <a href="http://localhost\Octofy+/cursos/organizacao.html"><button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@ session_start();
                 </div>
     
                 <div class="button">
-                 <a href="cursos/vida-financeira.html"> <button class="aboutMe">Acessar</button></a>
+                 <a href="http://localhost\Octofy+/cursos/vida-financeira.html"> <button class="aboutMe">Acessar</button></a>
                 </div>
               </div>
             </div>
