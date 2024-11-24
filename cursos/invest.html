@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/header-log.css">
     <link rel="shortcut icon" href="/assets/img/polvo-octofy-icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,48 +15,25 @@
 
 <body>
     <header>
-        <nav class="nav-bar">
-            <div class="Logo">
-                <!-- <img id="Logo-web" src="./img/Logo-Octofy.png" alt="Imagem"> -->
-                <img id="Logo-web" src="\assets\img\img_header\Logo Octofy.png" alt="Imagem">
+        <nav class="menu">
+            <input type="checkbox" class="menu-faketrigger" name="" id="">
+    
+            <div class="menu-lines">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a href="/landing-page/landing.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/quem-somos.html" class="nav-link">Quem Somos</a></li>
-                    <li class="nav-item"><a href="/planos.html" class="nav-link">Planos</a></li>
-                    <li class="nav-item"><a href="/blog/Blog.html" class="nav-link">Blog</a></li>
-                </ul>
-
-            </div>
-
-            <div class="login">
-                <a href="#" class="nav-link">Login</a>
-                <button><a href="#">Cadastre-se</a></button>
-            </div>
-
-            <div class="mobile-menu-icon">
-                <!-- Para conseguirmos usar a função no click do botão E também utilizar esse código em outros arquivos, temos que substituir o onClick por um id e pegar esse id no JS -->
-                <!-- <button onclick="menuShow()"><img class="icon" src="../img/menu.svg" alt=""></button> -->
-                <button id="mobile-menu-button"><img class="icon" src="../img/menu.svg" alt=""></button>
-            </div>
-
-        </nav>
-
-        <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quem Somos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+              <li><a href="/perfil.html">Perfil</a></li>
+              <li><a href="/cadastro-login/trilhas.php">Área de interesse</a></li>
+              <li><a href="/planos.html">Planos</a></li>
+              <li><a href="/blog/Blog.html">Blog</a></li>
+              <li><a href="/landing-page/landing.html">Sair</a></li>
             </ul>
-
-            <div class="login">
-                <a href="#" class="nav-link">Login</a>
-                <button><a href="#">Cadastre-se</a></button>
-            </div>
-
+        </nav>
+    
+        <div>
+            <img class="logo" src="/assets/img/Logo Octofy.png" alt="">
         </div>
     </header>
 
