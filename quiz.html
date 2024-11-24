@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/quiz.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="shortcut icon" href="/assets/img/polvo-octofy-icon.png" type="image/x-icon">
     <title>Quiz | Octofy</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
         .custom-purple {
             background-color: #a775ff;
@@ -76,39 +75,43 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold text-center mb-16">Chegou seu momento!</h1>
+    <main class="container">
+        <h1>Chegou seu momento!</h1>
+        <h2>Faça os testes e descubra seu perfil</h2>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="cards-grid">
             <!-- Card 1 -->
-            <div class="custom-purple-dark rounded-3xl overflow-hidden p-8 text-white flex flex-col justify-between min-h-[400px]">
-                <div>
-                    <h2 class="text-3xl font-bold mb-4">Descubra seu Perfil de Consumidor</h2>
-                    <p class="text-lg mb-8">
+            <div class="card card-dark">
+                <h2 class="card-title">Perfil de Consumidor</h2>
+                <div class="card-content">
+                    
+                    <p class="card-description">
                         Faça nosso teste e descubra qual é o seu perfil de consumidor e as melhores estratégias para você.
                     </p>
+                    <img src="assets/img/consumidor.png" alt="Ilustração Investidor" class="card-image">
                 </div>
-                <div class="flex items-center justify-between">
-                    <a href="https://tally.so/r/3qYDo2" class="custom-button">
+                <div class="card-footer">
+                    <a href="https://tally.so/r/3qYDo2" class="button" style="font-weight: 600;">
                         Começar
                     </a>
-                    <img src="/api/placeholder/200/200" alt="Ilustração Investidor" class="w-48">
+                    
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="custom-purple rounded-3xl overflow-hidden p-8 text-white flex flex-col justify-between min-h-[400px]">
-                <div>
-                    <h2 class="text-3xl font-bold mb-4">Teste de Perfil de Investidor</h2>
-                    <p class="text-lg mb-8">
+            <div class="card card-light">
+                <h2 class="card-title">Perfil de Investidor</h2>
+                <div class="card-content">
+                    <p class="card-description">
                         Faça nosso teste e descubra qual é o seu perfil de investimentos e as melhores estratégias para você.
                     </p>
+                    <img src="assets/img/investidor.png" alt="Ilustração Profissional" class="card-image">
                 </div>
-                <div class="flex items-center justify-between">
-                    <a href="https://tally.so/r/w5lZLb" class="custom-button">
+                <div class="card-footer">
+                    <a href="https://tally.so/r/w5lZLb" class="button" style="font-weight: 600;">
                         Começar
                     </a>
-                    <img src="/api/placeholder/200/200" alt="Ilustração Profissional" class="w-48">
+                   
                 </div>
             </div>
         </div>
