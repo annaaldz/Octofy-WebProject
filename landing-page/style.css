@@ -170,7 +170,7 @@ h2 {
     flex-direction: column;
     width: 100px;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
     height: 100px;
     margin: 50px 150px;
     padding: 20px;
@@ -191,30 +191,76 @@ h2 {
   width: 70%;
 }
 
+/* Seção de Valores */
+
+.container {
+    display: flex;
+    margin: 30px;
+    justify-content: space-evenly ;
+}
+
+.section {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    text-align: justify;
+}
+
+.section h2 {
+    font-size: 28px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    display: block;
+    margin: 0 auto 10px;
+    width: 50px;
+    height: 50px;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
 /* Seção de Impacto */
 .impact {
     text-align: center;
-    padding: 50px 20px;
-    
+    padding: 50px 30px;
+    background-color:#898EFF;
+    color:#ffffff;
 }
 
 .impact h2 {
-    color: #8A4DFF;
+    margin-bottom: 20px;
 }
 
 .impact-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .impact-cards .cardx {
-    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 320px;
+
+}
+
+.impact h3 {
+    font-size: 20px;
+    padding-bottom: 15px;
 }
 
 /* Seção de FAQ */
@@ -225,7 +271,7 @@ h2 {
 .faq h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #8A4DFF;
+    color:#898EFF;
 }
 
 .faq-item {
@@ -233,7 +279,7 @@ h2 {
 }
 
 .faq-question {
-    background-color: #8A4DFF;
+    background-color:#898EFF;
     color: #ffffff;
     padding: 15px 20px;
     border: none;
@@ -256,11 +302,19 @@ h2 {
 
 /* Rodapé */
 footer {
+    display: flex;
     background-color: #333333;
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
     margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration-line: none;
 }
 
 
